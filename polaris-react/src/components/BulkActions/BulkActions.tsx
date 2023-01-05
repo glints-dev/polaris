@@ -50,7 +50,7 @@ export interface BulkActionsProps {
 }
 
 type CombinedProps = BulkActionsProps & {
-  i18n: ReturnType<typeof useI18n>;
+  i18n?: ReturnType<typeof useI18n>;
 };
 
 interface State {

@@ -5,7 +5,6 @@ import {tokens, toPx, motion} from '@shopify/polaris-tokens';
 
 import {debounce} from '../../utilities/debounce';
 import {useToggle} from '../../utilities/use-toggle';
-import {useI18n} from '../../utilities/i18n';
 import {Badge} from '../Badge';
 import {Checkbox as PolarisCheckbox} from '../Checkbox';
 import {EmptySearchResult} from '../EmptySearchResult';
@@ -96,6 +95,13 @@ export interface IndexTableBaseProps {
   /** Optional dictionary of sort toggle labels for each sortable column, with ascending and descending label,
    * with the key as the index of the column */
   sortToggleLabels?: IndexTableSortToggleLabels;
+  loadingLabel?: string;
+  selectedLabel?: string;
+  emptySearchTitle?: string;
+  emptySearchDescription?: string;
+  selectAllLabel?: string;
+  onboardingBadgeText?: string;
+  undoText?: string;
 }
 
 export interface TableHeadingRect {
@@ -121,6 +127,13 @@ function IndexTableBase({
   sortColumnIndex,
   onSort,
   sortToggleLabels,
+  loadingLabel,
+  selectedLabel,
+  emptySearchTitle,
+  emptySearchDescription,
+  selectAllLabel,
+  onboardingBadgeText,
+  undoText,
   ...restProps
 }: IndexTableBaseProps) {
   const {
@@ -137,7 +150,6 @@ function IndexTableBase({
     condensed,
   } = useIndexValue();
   const handleSelectionChange = useIndexSelectionChange();
-  const i18n = useI18n();
 
   const {value: hasMoreLeftColumns, toggle: toggleHasMoreLeftColumns} =
     useToggle(false);
@@ -521,12 +533,7 @@ function IndexTableBase({
         <div className={styles.LoadingPanelRow}>
           <Spinner size="small" />
           <span className={styles.LoadingPanelText}>
-            {i18n.translate(
-              'Polaris.IndexTable.resourceLoadingAccessibilityLabel',
-              {
-                resourceNamePlural: resourceName.plural.toLocaleLowerCase(),
-              },
-            )}
+            {`${loadingLabel}`}
           </span>
         </div>
       </div>
@@ -593,9 +600,7 @@ function IndexTableBase({
             shouldShowBulkActions && !condensed ? (
               <div className={selectAllActionsClassName}>
                 <SelectAllActions
-                  label={i18n.translate('Polaris.IndexTable.selected', {
-                    selectedItemsCount: selectedItemsCountLabel,
-                  })}
+                  label={`${selectedItemsCountLabel} ${selectedLabel}`}
                   accessibilityLabel={bulkActionsAccessibilityLabel}
                   selected={bulkSelectState}
                   selectMode={selectMode}
@@ -693,10 +698,8 @@ function IndexTableBase({
     emptyState
   ) : (
     <EmptySearchResult
-      title={i18n.translate('Polaris.IndexTable.emptySearchTitle', {
-        resourceNamePlural: resourceName.plural,
-      })}
-      description={i18n.translate('Polaris.IndexTable.emptySearchDescription')}
+      title={emptySearchTitle}
+      description={emptySearchDescription}
       withIllustration
     />
   );
@@ -821,9 +824,7 @@ function IndexTableBase({
     return (
       <div className={styles.ColumnHeaderCheckboxWrapper}>
         <PolarisCheckbox
-          label={i18n.translate('Polaris.IndexTable.selectAllLabel', {
-            resourceNamePlural: resourceName.plural,
-          })}
+          label={selectAllLabel}
           labelHidden
           onChange={handleSelectPage}
           checked={bulkSelectState}
@@ -847,7 +848,7 @@ function IndexTableBase({
         <Stack wrap={false} alignment="center">
           <span>{heading.title}</span>
           <Badge status="new">
-            {i18n.translate('Polaris.IndexTable.onboardingBadgeText')}
+            {onboardingBadgeText}
           </Badge>
         </Stack>
       );
@@ -953,16 +954,11 @@ function IndexTableBase({
       return;
     }
 
-    const customActionText =
-      paginatedSelectAllActionText ??
-      i18n.translate('Polaris.IndexTable.selectAllItems', {
-        itemsLength: itemCount,
-        resourceNamePlural: resourceName.plural.toLocaleLowerCase(),
-      });
+    const customActionText = paginatedSelectAllActionText;
 
     const actionText =
       selectedItemsCount === SELECT_ALL_ITEMS
-        ? i18n.translate('Polaris.IndexTable.undo')
+        ? undoText
         : customActionText;
 
     return {
