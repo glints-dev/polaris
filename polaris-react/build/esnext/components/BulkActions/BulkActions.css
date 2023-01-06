@@ -1,0 +1,25 @@
+.Polaris-BulkActions__Group_33bvy { /* stylelint-disable -- polaris: Used to apply dark theme to action buttons */ --p-surface: var(--p-surface-dark); --p-text: var(--p-text-on-dark); --p-icon: var(--p-text-on-dark); --p-border-neutral-subdued: var(--p-border-on-dark); --p-border-subdued: var(--p-border-on-dark); --p-border-shadow-subdued: var(--p-border-on-dark); --p-action-secondary-hovered: var(--p-surface-hovered-dark); --p-action-secondary-pressed: var(--p-surface-pressed-dark); /* stylelint-enable */ font-size: var(--p-font-size-200); font-weight: var(--p-font-weight-regular); line-height: var(--p-font-line-height-3); border: none; text-transform: initial; letter-spacing: initial; display: flex; align-items: center; flex-wrap: wrap; opacity: 0; width: 100%; justify-content: center; transition: var(--p-duration-100) var(--p-ease); transition-property: transform, opacity; transform: translateY(7.5rem); padding: 0 var(--p-space-4); -webkit-backface-visibility: hidden; backface-visibility: hidden; will-change: transform, opacity; }
+
+@media (min-width: 48em) { .Polaris-BulkActions__Group_33bvy { font-size: var(--p-font-size-100); } }
+
+.Polaris-BulkActions__Group_33bvy.Polaris-BulkActions--groupNotSticky_1cubd { transform: none; opacity: 1; }
+
+.Polaris-BulkActions__Group_33bvy.Polaris-BulkActions__Group--entering_2lknf, .Polaris-BulkActions__Group_33bvy.Polaris-BulkActions__Group--exiting_5dj16 { opacity: 0; display: flex; }
+
+.Polaris-BulkActions__Group_33bvy.Polaris-BulkActions__Group--entered_1pt5s { opacity: 1; display: flex; transform: translateY(0); }
+
+.Polaris-BulkActions__Group_33bvy.Polaris-BulkActions__Group--exited_8lefn { opacity: 0; display: none; }
+
+.Polaris-BulkActions__Group_33bvy.Polaris-BulkActions__Group--measuring_1kdrm { transition: none; display: flex; opacity: 0; }
+
+.Polaris-BulkActions__ButtonGroupWrapper_1qcgd { width: auto; justify-content: flex-start; padding: var(--p-space-4); background: var(--p-surface); border-radius: var(--p-border-radius-2); box-shadow: var(--p-shadow-deep), var(--p-shadow-popover); max-width: 100%; }
+
+.Polaris-BulkActions__Group--measuring_1kdrm .Polaris-BulkActions__ButtonGroupWrapper_1qcgd { position: absolute; width: auto; }
+
+.Polaris-BulkActions__BulkActionButton_1njj8 { white-space: nowrap; }
+
+.Polaris-BulkActions__BulkActionButton_1njj8 button { display: flex; }
+
+.Polaris-BulkActions--disabled_hcuh9 { transition: none; box-shadow: none; border-color: var(--p-border-disabled); background: var(--p-surface-disabled); color: var(--p-text-disabled); cursor: default; pointer-events: none; }
+
+.Polaris-BulkActions--disabled_hcuh9 svg { fill: var(--p-icon-disabled); }

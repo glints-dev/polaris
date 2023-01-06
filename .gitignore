@@ -7,7 +7,6 @@
 .shadowenv.d
 .turbo
 node_modules
-/polaris-react/build
 /polaris-react/build-internal
 /polaris-react/src/styles/_media-queries.scss
 /polaris-tokens/build

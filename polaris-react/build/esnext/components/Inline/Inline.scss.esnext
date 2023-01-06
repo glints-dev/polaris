@@ -1,0 +1,7 @@
+import './Inline.css';
+
+var styles = {
+  "Inline": "Polaris-Inline_j8r4v"
+};
+
+export { styles as default };

@@ -1,0 +1,7 @@
+import './Columns.css';
+
+var styles = {
+  "Columns": "Polaris-Columns_17mx7"
+};
+
+export { styles as default };

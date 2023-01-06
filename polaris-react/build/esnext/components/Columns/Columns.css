@@ -1,0 +1,17 @@
+.Polaris-Columns_17mx7 { --pc-columns-gap-xs: initial; --pc-columns-gap-sm: initial; --pc-columns-gap-md: initial; --pc-columns-gap-lg: initial; --pc-columns-gap-xl: initial; gap: var(--pc-columns-gap-xs); --pc-columns-xs: 6; --pc-columns-sm: var(--pc-columns-xs); --pc-columns-md: var(--pc-columns-sm); --pc-columns-lg: var(--pc-columns-md); --pc-columns-xl: var(--pc-columns-lg); display: grid; grid-template-columns: var(--pc-columns-xs); }
+
+@media (min-width: 30.625em) { .Polaris-Columns_17mx7 { gap: var(--pc-columns-gap-sm, var(--pc-columns-gap-xs)); } }
+
+@media (min-width: 48em) { .Polaris-Columns_17mx7 { gap: var(--pc-columns-gap-md, var(--pc-columns-gap-sm, var(--pc-columns-gap-xs))); } }
+
+@media (min-width: 65em) { .Polaris-Columns_17mx7 { gap: var(--pc-columns-gap-lg, var(--pc-columns-gap-md, var(--pc-columns-gap-sm, var(--pc-columns-gap-xs)))); } }
+
+@media (min-width: 90em) { .Polaris-Columns_17mx7 { gap: var(--pc-columns-gap-xl, var(--pc-columns-gap-lg, var(--pc-columns-gap-md, var(--pc-columns-gap-sm, var(--pc-columns-gap-xs))))); } }
+
+@media (min-width: 30.625em) { .Polaris-Columns_17mx7 { grid-template-columns: var(--pc-columns-sm); } }
+
+@media (min-width: 48em) { .Polaris-Columns_17mx7 { grid-template-columns: var(--pc-columns-md); } }
+
+@media (min-width: 65em) { .Polaris-Columns_17mx7 { grid-template-columns: var(--pc-columns-lg); } }
+
+@media (min-width: 90em) { .Polaris-Columns_17mx7 { grid-template-columns: var(--pc-columns-xl); } }

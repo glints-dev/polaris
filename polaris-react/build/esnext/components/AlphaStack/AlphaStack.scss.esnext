@@ -1,0 +1,9 @@
+import './AlphaStack.css';
+
+var styles = {
+  "AlphaStack": "Polaris-AlphaStack_1x5dy",
+  "listReset": "Polaris-AlphaStack--listReset_1gz07",
+  "fullWidth": "Polaris-AlphaStack--fullWidth_zyvh4"
+};
+
+export { styles as default };

@@ -1,0 +1,1 @@
+{"version":3,"file":"react-testing.d.ts","sourceRoot":"","sources":["../../../../../tests/utilities/react-testing.tsx"],"names":[],"mappings":"AACA,OAAO,EACL,WAAW,EACX,KAAK,EACL,OAAO,IAAI,mBAAmB,EAC9B,UAAU,EACX,MAAM,wBAAwB,CAAC;AAIhC,OAAO,EAEL,8BAA8B,EAC/B,MAAM,0CAA0C,CAAC;AAElD,OAAO,EAAC,WAAW,EAAE,KAAK,EAAE,mBAAmB,EAAE,UAAU,EAAC,CAAC;AAE7D,eAAO,MAAM,YAAY,qHAcvB,CAAC"}
