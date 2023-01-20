@@ -1,5 +1,11 @@
 # Changelog
 
+## 14.0.0
+
+### Major Changes
+
+- [`bf4c8b9`](https://github.com/Shopify/polaris/commit/bf4c8b991c154acb2ced1d077af1f23cad427e1b) Thanks [@marthayaputra](https://github.com/marthayaputra)! - downgrade nanoid
+
 ## 13.0.0
 
 ### Major Changes
