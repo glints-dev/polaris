@@ -174,7 +174,7 @@ $loading-panel-height: 53px;
     &,
     .TableCell-first,
     .TableCell-first + .TableCell {
-      background-color: var(--p-surface-hovered);
+      background-color: #eaf9ff;
     }
   }
 
@@ -185,7 +185,7 @@ $loading-panel-height: 53px;
     .TableHeading-second,
     .TableCell-first,
     .TableCell-first + .TableCell {
-      background-color: var(--p-surface-selected);
+      background-color: #eaf9ff;
     }
   }
 
@@ -195,7 +195,7 @@ $loading-panel-height: 53px;
     &,
     .TableCell-first,
     .TableCell-first + .TableCell {
-      background-color: var(--p-surface-selected-hovered);
+      background-color: #eaf9ff;
     }
   }
 }

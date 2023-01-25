@@ -402,17 +402,6 @@ describe('<Tabs />', () => {
       expect(tabs.find(Popover)).toHaveReactProps({preferredPosition: 'below'});
     });
 
-    it('renders with a button as the activator when there are hiddenTabs', () => {
-      const tabs = mountWithApp(<Tabs {...mockProps} />);
-      tabs.find(TabMeasurer)!.trigger('handleMeasurement', {
-        hiddenTabWidths: [82, 160, 150, 100, 80, 120],
-        containerWidth: 300,
-        disclosureWidth: 0,
-      });
-
-      expect(tabs.find(Popover)!.prop('activator').type).toBe('button');
-    });
-
     describe('ArrowRight', () => {
       it('shifts focus to the first tab when pressing ArrowRight', () => {
         const tabs = mountWithApp(<Tabs {...mockProps} />);

@@ -3,6 +3,7 @@ import React, {useRef, useImperativeHandle, forwardRef} from 'react';
 import type {CheckboxHandles} from '../../types';
 import {classNames} from '../../utilities/css';
 import {Checkbox} from '../Checkbox';
+import type {IndexTableHeadingCheckbox} from '../IndexTable';
 
 import styles from './CheckableButton.scss';
 
@@ -13,6 +14,7 @@ export interface CheckableButtonProps {
   disabled?: boolean;
   onToggleAll?(): void;
   ariaLive?: 'off' | 'polite';
+  checkbox?: (props: IndexTableHeadingCheckbox) => React.ReactNode;
 }
 
 export const CheckableButton = forwardRef(function CheckableButton(
@@ -23,6 +25,7 @@ export const CheckableButton = forwardRef(function CheckableButton(
     selected,
     disabled,
     ariaLive,
+    checkbox,
   }: CheckableButtonProps,
   ref,
 ) {
@@ -43,14 +46,21 @@ export const CheckableButton = forwardRef(function CheckableButton(
   return (
     <div className={className} onClick={onToggleAll}>
       <div className={styles.Checkbox}>
-        <Checkbox
-          label={accessibilityLabel}
-          labelHidden
-          checked={selected}
-          disabled={disabled}
-          onChange={onToggleAll}
-          ref={checkBoxRef}
-        />
+        {checkbox ? (
+          checkbox?.({
+            onChange: onToggleAll,
+            checked: selected,
+          })
+        ) : (
+          <Checkbox
+            label={accessibilityLabel}
+            labelHidden
+            checked={selected}
+            disabled={disabled}
+            onChange={onToggleAll}
+            ref={checkBoxRef}
+          />
+        )}
       </div>
       <span className={styles.Label} aria-live={ariaLive}>
         {label}

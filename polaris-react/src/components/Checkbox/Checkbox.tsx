@@ -6,10 +6,10 @@ import React, {
   useContext,
 } from 'react';
 import {MinusMinor, TickSmallMinor} from '@shopify/polaris-icons';
+import {nanoid} from 'nanoid';
 
 import {classNames} from '../../utilities/css';
 import {useToggle} from '../../utilities/use-toggle';
-import {useUniqueId} from '../../utilities/unique-id';
 import {Choice, helpTextID} from '../Choice';
 import {errorTextID} from '../InlineError';
 import {Icon} from '../Icon';
@@ -70,7 +70,7 @@ export const Checkbox = forwardRef<CheckboxHandles, CheckboxProps>(
     ref,
   ) {
     const inputNode = useRef<HTMLInputElement>(null);
-    const id = useUniqueId('Checkbox', idProp);
+    const id = `Checkbox-${idProp ?? nanoid()}`;
     const {
       value: mouseOver,
       setTrue: handleMouseOver,
