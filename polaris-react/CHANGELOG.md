@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.0.0
+
+### Major Changes
+
+- [`b838069`](https://github.com/Shopify/polaris/commit/b838069916b59549358ac411f0c65123590df9b0) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable pass BulkAction component as prop
+
 ## 14.0.0
 
 ### Major Changes
