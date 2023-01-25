@@ -5,6 +5,7 @@ import {classNames} from '../../utilities/css';
 import type {Action} from '../../types';
 import {UnstyledButton} from '../UnstyledButton';
 import {CheckableButton} from '../CheckableButton';
+import type {IndexTableHeadingCheckbox} from '../IndexTable';
 
 import styles from './SelectAllActions.scss';
 
@@ -28,6 +29,7 @@ export interface SelectAllActionsProps {
   disabled?: boolean;
   /** Callback when the select all checkbox is clicked */
   onToggleAll?(): void;
+  checkbox?: (props: IndexTableHeadingCheckbox) => React.ReactNode;
 }
 
 export const SelectAllActions = forwardRef(function SelectAllActions(
@@ -40,6 +42,7 @@ export const SelectAllActions = forwardRef(function SelectAllActions(
     paginatedSelectAllAction,
     disabled,
     onToggleAll,
+    checkbox,
   }: SelectAllActionsProps,
   ref,
 ) {
@@ -72,6 +75,7 @@ export const SelectAllActions = forwardRef(function SelectAllActions(
     disabled,
     ariaLive,
     ref,
+    checkbox,
   };
   const markup = (
     <Transition timeout={0} in={selectMode} key="markup">

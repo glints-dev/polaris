@@ -209,7 +209,7 @@ export {Image} from './components/Image';
 export type {ImageProps} from './components/Image';
 
 export {IndexTable, Row, Cell} from './components/IndexTable';
-export type {IndexTableProps} from './components/IndexTable';
+export type {IndexTableProps, RowProps} from './components/IndexTable';
 
 export {Indicator} from './components/Indicator';
 export type {IndicatorProps} from './components/Indicator';
@@ -435,6 +435,6 @@ export {
 export {
   SELECT_ALL_ITEMS as INDEX_TABLE_SELECT_ALL_ITEMS,
   SelectionType as IndexTableSelectionType,
-  useIndexSelectionChange as useIndexTableIndexSelectionChange,
+  useIndexSelectionChange,
 } from './utilities/index-provider';
 export {useBreakpoints} from './utilities/breakpoints';
