@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.0
+
+### Minor Changes
+
+- [`24441c2`](https://github.com/Shopify/polaris/commit/24441c28d3c8bd2d06198c9786c48b29142013a6) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable styling changes
+
 ## 5.0.2
 
 ### Patch Changes
