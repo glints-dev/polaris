@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.2.0
+
+### Minor Changes
+
+- [`49ec2b3`](https://github.com/Shopify/polaris/commit/49ec2b38b2df24e980b9802915ce21f66048e624) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - update index table checkbox type
+
 ## 15.1.0
 
 ### Minor Changes
