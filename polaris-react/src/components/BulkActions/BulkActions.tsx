@@ -3,7 +3,6 @@ import {Transition} from 'react-transition-group';
 
 import {debounce} from '../../utilities/debounce';
 import {classNames} from '../../utilities/css';
-import {useI18n} from '../../utilities/i18n';
 import {clamp} from '../../utilities/clamp';
 import type {
   BadgeAction,
@@ -49,9 +48,7 @@ export interface BulkActionsProps {
   width: number;
 }
 
-type CombinedProps = BulkActionsProps & {
-  i18n: ReturnType<typeof useI18n>;
-};
+type CombinedProps = BulkActionsProps;
 
 interface State {
   popoverVisible: boolean;
@@ -202,8 +199,7 @@ class BulkActionsInner extends PureComponent<CombinedProps, State> {
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   render() {
-    const {selectMode, disabled, promotedActions, i18n, isSticky, width} =
-      this.props;
+    const {selectMode, disabled, promotedActions, isSticky, width} = this.props;
 
     const actionSections = this.actionSections();
 
@@ -214,9 +210,7 @@ class BulkActionsInner extends PureComponent<CombinedProps, State> {
     ) {
       // eslint-disable-next-line no-console
       console.warn(
-        i18n.translate('Polaris.ResourceList.BulkActions.warningMessage', {
-          maxPromotedActions: MAX_PROMOTED_ACTIONS,
-        }),
+        `"To provide a better user experience. There should only be a maximum of ${MAX_PROMOTED_ACTIONS} promoted actions."`,
       );
     }
 
@@ -255,12 +249,8 @@ class BulkActionsInner extends PureComponent<CombinedProps, State> {
     const activatorLabel =
       !promotedActions ||
       (promotedActions && numberOfPromotedActionsToRender === 0 && !measuring)
-        ? i18n.translate(
-            'Polaris.ResourceList.BulkActions.actionsActivatorLabel',
-          )
-        : i18n.translate(
-            'Polaris.ResourceList.BulkActions.moreActionsActivatorLabel',
-          );
+        ? 'Actions'
+        : 'More actions';
 
     let combinedActions: ActionListSection[] = [];
 
@@ -416,7 +406,5 @@ function instanceOfMenuGroupDescriptor(
 }
 
 export function BulkActions(props: BulkActionsProps) {
-  const i18n = useI18n();
-
-  return <BulkActionsInner {...props} i18n={i18n} />;
+  return <BulkActionsInner {...props} />;
 }

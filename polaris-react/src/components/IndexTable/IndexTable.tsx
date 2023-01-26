@@ -13,7 +13,7 @@ import {Stack} from '../Stack';
 import {Spinner} from '../Spinner';
 import {Text} from '../Text';
 import {
-  BulkAction,
+  BulkActions,
   BulkActionsProps,
   useIsBulkActionsSticky,
 } from '../BulkActions';
@@ -27,7 +27,7 @@ import {
 } from '../../utilities/index-provider';
 import {AfterInitialMount} from '../AfterInitialMount';
 import {IndexProvider} from '../IndexProvider';
-import type {ActionListSection, NonEmptyArray} from '../../types';
+import type {NonEmptyArray} from '../../types';
 
 import {getTableHeadingsBySelector} from './utilities';
 import {ScrollContainer, Cell, Row} from './components';
@@ -66,6 +66,7 @@ export interface IndexTableHeadingCheckbox {
   label?: string;
   onChange?: (checked: boolean) => unknown;
   checked?: boolean | 'indeterminate';
+  indeterminate?: boolean;
 }
 
 export interface IndexTableBaseProps {
@@ -104,11 +105,6 @@ export interface IndexTableBaseProps {
   onboardingBadgeText?: string;
   undoText?: string;
   checkbox?: (props: IndexTableHeadingCheckbox) => React.ReactNode;
-  renderBulkActions?: ({
-    actions,
-  }: {
-    actions: (BulkAction | ActionListSection)[];
-  }) => React.ReactNode;
 }
 
 export interface TableHeadingRect {
@@ -142,7 +138,6 @@ function IndexTableBase({
   onboardingBadgeText,
   undoText,
   checkbox,
-  renderBulkActions,
   ...restProps
 }: IndexTableBaseProps) {
   const {
@@ -537,7 +532,7 @@ function IndexTableBase({
   );
 
   const shouldShowActions = !condensed || selectedItemsCount;
-  // const promotedActions = shouldShowActions ? promotedBulkActions : [];
+  const promotedActions = shouldShowActions ? promotedBulkActions : [];
   const actions = shouldShowActions ? bulkActions : [];
 
   const bulkActionsMarkup =
@@ -554,15 +549,14 @@ function IndexTableBase({
             : undefined,
         }}
       >
-        {renderBulkActions?.({actions})}
-        {/* <BulkActions
+        <BulkActions
           selectMode={selectMode}
           promotedActions={promotedActions}
           actions={actions}
           onSelectModeToggle={condensed ? handleSelectModeToggle : undefined}
           isSticky={isBulkActionsSticky}
           width={bulkActionsMaxWidth}
-        /> */}
+        />
       </div>
     ) : null;
 
@@ -842,9 +836,9 @@ function IndexTableBase({
     };
   }
 
-  // function handleSelectModeToggle() {
-  //   handleSelectionChange(SelectionType.All, false);
-  // }
+  function handleSelectModeToggle() {
+    handleSelectionChange(SelectionType.All, false);
+  }
 }
 
 const isBreakpointsXS = () => {
