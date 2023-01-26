@@ -7,6 +7,10 @@ import type {IndexTableHeadingCheckbox} from '../IndexTable';
 
 import styles from './CheckableButton.scss';
 
+export interface CheckboxProps
+  extends Omit<IndexTableHeadingCheckbox, 'checked'> {
+  checked?: boolean | 'indeterminate';
+}
 export interface CheckableButtonProps {
   accessibilityLabel?: string;
   label?: string;
@@ -14,7 +18,7 @@ export interface CheckableButtonProps {
   disabled?: boolean;
   onToggleAll?(): void;
   ariaLive?: 'off' | 'polite';
-  checkbox?: (props: IndexTableHeadingCheckbox) => React.ReactNode;
+  checkbox?: (props: CheckboxProps) => React.ReactNode;
 }
 
 export const CheckableButton = forwardRef(function CheckableButton(
