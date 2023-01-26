@@ -66,6 +66,7 @@ export interface IndexTableHeadingCheckbox {
   label?: string;
   onChange?: (checked: boolean) => unknown;
   checked?: boolean | 'indeterminate';
+  indeterminate?: boolean;
 }
 
 export interface IndexTableBaseProps {

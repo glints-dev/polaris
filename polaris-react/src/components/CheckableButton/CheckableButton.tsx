@@ -50,6 +50,7 @@ export const CheckableButton = forwardRef(function CheckableButton(
           checkbox?.({
             onChange: onToggleAll,
             checked: selected,
+            indeterminate: selected === 'indeterminate',
           })
         ) : (
           <Checkbox
