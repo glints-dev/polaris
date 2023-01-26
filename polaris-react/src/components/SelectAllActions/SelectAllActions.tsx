@@ -4,8 +4,7 @@ import {Transition} from 'react-transition-group';
 import {classNames} from '../../utilities/css';
 import type {Action} from '../../types';
 import {UnstyledButton} from '../UnstyledButton';
-import {CheckableButton} from '../CheckableButton';
-import type {IndexTableHeadingCheckbox} from '../IndexTable';
+import {CheckableButton, CheckboxProps} from '../CheckableButton';
 
 import styles from './SelectAllActions.scss';
 
@@ -29,7 +28,7 @@ export interface SelectAllActionsProps {
   disabled?: boolean;
   /** Callback when the select all checkbox is clicked */
   onToggleAll?(): void;
-  checkbox?: (props: IndexTableHeadingCheckbox) => React.ReactNode;
+  checkbox?: (props: CheckboxProps) => React.ReactNode;
 }
 
 export const SelectAllActions = forwardRef(function SelectAllActions(

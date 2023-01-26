@@ -62,11 +62,19 @@ interface IndexTableSortToggleLabels {
   [key: number]: IndexTableSortToggleLabel;
 }
 
-export interface IndexTableHeadingCheckbox {
+export interface IndexTableHeadingCheckbox
+  extends Omit<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    'type' | 'onChange'
+  > {
+  id?: string;
   label?: string;
-  onChange?: (checked: boolean) => unknown;
-  checked?: boolean | 'indeterminate';
+  hasError?: boolean;
   indeterminate?: boolean;
+  checked?: boolean;
+  disabled?: boolean;
+  helpText?: string;
+  onChange?(newChecked: boolean, id: string): void;
 }
 
 export interface IndexTableBaseProps {
@@ -766,7 +774,7 @@ function IndexTableBase({
         {checkbox?.({
           label: selectAllLabel,
           onChange: handleSelectPage,
-          checked: bulkSelectState,
+          checked: Boolean(bulkSelectState),
         })}
       </div>
     );
