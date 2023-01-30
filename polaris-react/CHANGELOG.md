@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.3.0
+
+### Minor Changes
+
+- [`7cdc7c2`](https://github.com/Shopify/polaris/commit/7cdc7c237311a1051db78e5e9ce33a1f52e9d92d) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - pressed bulk action button style
+
 ## 15.2.0
 
 ### Minor Changes
