@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.4.0
+
+### Minor Changes
+
+- [`0bb9bd0`](https://github.com/Shopify/polaris/commit/0bb9bd0ae233c81a626a25836513a5ba6f0e02fb) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - bulk action position and alignment styles
+
 ## 15.3.0
 
 ### Minor Changes
