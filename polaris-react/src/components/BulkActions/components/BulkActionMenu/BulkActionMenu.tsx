@@ -28,6 +28,7 @@ export function BulkActionMenu({
             onAction={toggleMenuVisibility}
             content={title}
             indicator={isNewBadgeInBadgeActions}
+            pressed={isVisible}
           />
         }
         onClose={toggleMenuVisibility}
