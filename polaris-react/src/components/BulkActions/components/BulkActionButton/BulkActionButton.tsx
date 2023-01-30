@@ -13,6 +13,7 @@ export type BulkActionButtonProps = {
   indicator?: boolean;
   handleMeasurement?(width: number): void;
   showContentInButton?: boolean;
+  pressed?: boolean;
 } & DisableableAction;
 
 export function BulkActionButton({
@@ -26,6 +27,7 @@ export function BulkActionButton({
   disabled,
   indicator,
   showContentInButton,
+  pressed,
 }: BulkActionButtonProps) {
   const bulkActionButton = useRef<HTMLDivElement>(null);
 
@@ -56,6 +58,7 @@ export function BulkActionButton({
             <Icon source={HorizontalDotsMinor} color="base" />
           ) : undefined
         }
+        pressed={pressed}
       >
         {buttonContent}
       </Button>
