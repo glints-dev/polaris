@@ -9,7 +9,7 @@ import {useComponentDidMount} from '../../../../utilities/use-component-did-moun
 import styles from '../../BulkActions.scss';
 
 export type BulkActionButtonProps = {
-  disclosure?: boolean;
+  disclosure?: boolean | 'up';
   indicator?: boolean;
   handleMeasurement?(width: number): void;
   showContentInButton?: boolean;
@@ -49,7 +49,11 @@ export function BulkActionButton({
         accessibilityLabel={
           disclosure && !showContentInButton ? content : accessibilityLabel
         }
-        disclosure={disclosure && showContentInButton}
+        disclosure={
+          typeof disclosure === 'string'
+            ? disclosure
+            : disclosure && showContentInButton
+        }
         onClick={onAction}
         disabled={disabled}
         size="slim"
