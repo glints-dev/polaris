@@ -23,7 +23,7 @@ export function BulkActionMenu({
         active={isVisible}
         activator={
           <BulkActionButton
-            disclosure
+            disclosure="up"
             showContentInButton
             onAction={toggleMenuVisibility}
             content={title}
@@ -33,6 +33,8 @@ export function BulkActionMenu({
         }
         onClose={toggleMenuVisibility}
         preferInputActivator
+        preferredPosition="above"
+        preferredAlignment="left"
       >
         <ActionList items={actions} onActionAnyItem={toggleMenuVisibility} />
       </Popover>
