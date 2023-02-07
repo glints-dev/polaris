@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.5.0
+
+### Minor Changes
+
+- [`58c59df`](https://github.com/Shopify/polaris/commit/58c59dfbf895cca725dfe55a71d71e6a375abef2) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - render table headers when empty state
+
 ## 15.4.0
 
 ### Minor Changes
