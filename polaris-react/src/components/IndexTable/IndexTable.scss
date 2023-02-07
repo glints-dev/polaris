@@ -681,6 +681,8 @@ $scroll-bar-size: var(--p-space-2);
 
 .EmptySearchResultWrapper {
   padding: var(--p-space-4);
+  width: 100%;
+  position: absolute;
 }
 
 .condensedRow {

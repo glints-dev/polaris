@@ -660,6 +660,10 @@ function IndexTableBase({
     </>
   );
 
+  const hasRowItems = itemCount > 0;
+  const emptyTableBody = (
+    <div className={styles.EmptySearchResultWrapper}>{emptyStateMarkup}</div>
+  );
   const bodyMarkup = condensed ? (
     <>
       {sharedMarkup}
@@ -668,7 +672,7 @@ function IndexTableBase({
         className={styles.CondensedList}
         ref={condensedListElement}
       >
-        {children}
+        {hasRowItems ? children : emptyStateMarkup}
       </ul>
     </>
   ) : (
@@ -682,17 +686,13 @@ function IndexTableBase({
           <thead>
             <tr className={styles.HeadingRow}>{headingsMarkup}</tr>
           </thead>
-          <tbody ref={tableBodyRef}>{children}</tbody>
+          <tbody ref={tableBodyRef}>
+            {hasRowItems ? children : emptyTableBody}
+          </tbody>
         </table>
       </ScrollContainer>
     </>
   );
-  const tableContentMarkup =
-    itemCount > 0 ? (
-      bodyMarkup
-    ) : (
-      <div className={styles.EmptySearchResultWrapper}>{emptyStateMarkup}</div>
-    );
 
   const tableWrapperClassNames = classNames(
     styles.IndexTableWrapper,
@@ -706,7 +706,7 @@ function IndexTableBase({
       <div className={styles.IndexTable}>
         <div className={tableWrapperClassNames} ref={tableMeasurerRef}>
           {!shouldShowBulkActions && !condensed && loadingMarkup}
-          {tableContentMarkup}
+          {bodyMarkup}
         </div>
         <div ref={bulkActionsIntersectionRef} />
       </div>
