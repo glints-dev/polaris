@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.6.0
+
+### Minor Changes
+
+- [`6bd10fd`](https://github.com/Shopify/polaris/commit/6bd10fd6e168918a5fe91fc414d47bccb7e26668) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - use tr instead of div for empty state
+
 ## 15.5.0
 
 ### Minor Changes
