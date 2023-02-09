@@ -662,7 +662,7 @@ function IndexTableBase({
 
   const hasRowItems = itemCount > 0;
   const emptyTableBody = (
-    <div className={styles.EmptySearchResultWrapper}>{emptyStateMarkup}</div>
+    <tr className={styles.EmptySearchResultWrapper}>{emptyStateMarkup}</tr>
   );
   const bodyMarkup = condensed ? (
     <>
