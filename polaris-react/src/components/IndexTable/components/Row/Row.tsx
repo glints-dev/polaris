@@ -24,7 +24,8 @@ export interface RowProps {
   onNavigation?(id: string): void;
   onClick?(): void;
   checkbox?: React.ReactNode;
-  onMouseEnterCheckboxCell?(): void;
+  onMouseOverCheckboxCell?(): void;
+  onMouseLeaveCheckboxCell?(): void;
 }
 
 export const Row = memo(function Row({
@@ -38,7 +39,8 @@ export const Row = memo(function Row({
   onNavigation,
   onClick,
   checkbox,
-  onMouseEnterCheckboxCell,
+  onMouseOverCheckboxCell,
+  onMouseLeaveCheckboxCell,
 }: RowProps) {
   const {selectable, selectMode, condensed} = useIndexRow();
   const onSelectionChange = useIndexSelectionChange();
@@ -147,7 +149,8 @@ export const Row = memo(function Row({
   const checkboxMarkup = selectable ? (
     <td
       className="Polaris-IndexTable__TableCell"
-      onMouseEnter={onMouseEnterCheckboxCell}
+      onMouseOver={onMouseOverCheckboxCell}
+      onMouseLeave={onMouseLeaveCheckboxCell}
     >
       {checkbox}
     </td>
