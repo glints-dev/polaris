@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.8.0
+
+### Minor Changes
+
+- [`7729ed1`](https://github.com/Shopify/polaris/commit/7729ed1db06d3978071a1935db69af23bfd68908) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable checkbox row onmouseleave
+
 ## 15.7.0
 
 ### Minor Changes
