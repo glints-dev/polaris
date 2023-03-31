@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.7.0
+
+### Minor Changes
+
+- [`3f281ab`](https://github.com/Shopify/polaris/commit/3f281ab470ba98d821eaf3935050272089511843) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable handle mouse enter
+
 ## 15.6.0
 
 ### Minor Changes
