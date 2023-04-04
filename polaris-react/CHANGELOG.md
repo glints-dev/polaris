@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.9.0
+
+### Minor Changes
+
+- [`f804c9c`](https://github.com/Shopify/polaris/commit/f804c9ca76e03b7d1c9ebd058f40a2a240ee0ee1) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable checkbox table cell class
+
 ## 15.8.0
 
 ### Minor Changes
