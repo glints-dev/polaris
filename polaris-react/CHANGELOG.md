@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.10.0
+
+### Minor Changes
+
+- [`5835642`](https://github.com/Shopify/polaris/commit/583564203352c0f3bfd7c03993fb0d6a22d297ef) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - IndexTable: TableCell sticky
+
 ## 15.9.0
 
 ### Minor Changes
