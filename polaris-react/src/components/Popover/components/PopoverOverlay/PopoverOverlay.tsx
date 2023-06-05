@@ -41,6 +41,7 @@ enum TransitionStatus {
 
 export interface PopoverOverlayProps {
   children?: React.ReactNode;
+  fitContent?: boolean;
   fullWidth?: boolean;
   fullHeight?: boolean;
   fluidContent?: boolean;
@@ -218,6 +219,7 @@ export class PopoverOverlay extends PureComponent<PopoverOverlayProps, State> {
       id,
       children,
       sectioned,
+      fitContent,
       fullWidth,
       fullHeight,
       fluidContent,
@@ -230,6 +232,7 @@ export class PopoverOverlay extends PureComponent<PopoverOverlayProps, State> {
       styles.Popover,
       positioning === 'above' && styles.positionedAbove,
       fullWidth && styles.fullWidth,
+      fitContent && styles.fitContent,
       measuring && styles.measuring,
       hideOnPrint && styles['PopoverOverlay-hideOnPrint'],
     );

@@ -57,6 +57,7 @@ export interface PopoverProps {
   preventFocusOnClose?: boolean;
   /** Automatically add wrap content in a section */
   sectioned?: boolean;
+  fitContent?: boolean;
   /** Allow popover to stretch to the full width of its activator */
   fullWidth?: boolean;
   /** Allow popover to stretch to fit content vertically */
