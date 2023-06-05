@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.11.0
+
+### Minor Changes
+
+- [`2bea57e`](https://github.com/Shopify/polaris/commit/2bea57eff2ca422aaf21e9fadb6cf4fe0caeecab) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - add Popover fit-content prop
+
 ## 15.10.0
 
 ### Minor Changes
