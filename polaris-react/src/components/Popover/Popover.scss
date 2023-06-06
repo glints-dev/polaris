@@ -42,6 +42,15 @@ $vertical-motion-offset: -5px;
   transform: translateY($vertical-motion-offset);
 }
 
+.fitContent {
+  margin: $visible-portion-of-arrow auto 0 auto;
+  width: fix-content;
+
+  .Content {
+    max-width: none;
+  }
+}
+
 .fullWidth {
   margin: $visible-portion-of-arrow auto 0 auto;
 
