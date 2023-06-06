@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.12.0
+
+### Minor Changes
+
+- [`4416257`](https://github.com/Shopify/polaris/commit/4416257883f1aee76c62b725d5ef357040f74e8e) Thanks [@ninariccimarie](https://github.com/ninariccimarie)! - Popover fitContent
+
 ## 15.11.0
 
 ### Minor Changes
